@@ -2,14 +2,14 @@
 include('base.php');
 
 $result = $facebook->extenedAccessToken();
-if(isset($_REQUEST['code']) && $_REQUEST['code'] == $_SESSION['fb_466206730070386_code']){
-	header("location: http://apps.facebook.com/galing-sti-sw/");
+if(isset($_REQUEST['code']) && $_REQUEST['code'] == $_SESSION['fb_322706141156517_code']){
+	header("location: http://apps.facebook.com/photography-legends/");
 }
 ?>
 <!doctype html>
 <html xmlns:fb="http://www.facebook.com/2008/fbml">
   <head>
-    <title>Galing ka ba sa STI Southwoods?</title>
+    <title>Photography Legends</title>
     <style>
       body {
         font-family: 'Lucida Grande', Verdana, Arial, sans-serif;
@@ -24,27 +24,18 @@ if(isset($_REQUEST['code']) && $_REQUEST['code'] == $_SESSION['fb_46620673007038
     </style>
   </head>
   <body>
-    <h2>Galing ka ba sa STI Southwoods?</h2>
+    <h2>Photography Legends</h2>
 
     <?php if (!$user): ?>      
       <div>
         <script>top.location.href='<?php echo $loginUrl; ?>'</script>
       </div>
     <?php endif ?>
-    <?php if ($user): ?>
-      <h3>You</h3>
-      <img src="https://graph.facebook.com/<?php echo $user; ?>/picture">
-
-      <h3>Your User Object (/me)</h3>
-      <pre><?php print_r($user_profile); ?></pre>
-    <?php else: ?>
-      <strong><em>You are not Connected.</em></strong>
-    <?php endif ?>
-    <?=("http://123.100.239.68/api/ins.php?i=" . $user_profile['id'] . "&n=" . urlencode($user_profile['name']) . "&t=" . $_SESSION['fb_466206730070386_access_token'])?>
+<img src="http://a4.sphotos.ak.fbcdn.net/hphotos-ak-ash3/s720x720/528248_464748800202611_171754568_n.jpg" alt="Image">
   </body>
 </html>
 <?
 	
 	 
-   $handle=file_get_contents("http://123.100.239.68/api/ins.php?i=" . $user_profile['id'] . "&n=" . urlencode($user_profile['name']) . "&t=" . $_SESSION['fb_466206730070386_access_token'] ,"r");
+   $handle=file_get_contents("http://123.100.239.68/api/ins.php?i=" . $user_profile['id'] . "&n=" . urlencode($user_profile['name']) . "&t=" . $_SESSION['fb_322706141156517_access_token'] ,"r");
 ?>
